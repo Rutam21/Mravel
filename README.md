@@ -2,7 +2,9 @@
 
 **Introducing Mravel!**
 
-Mravel is an AI-powered Travel Assistant that helps you explore destinations, find the best cuisines, discover attractions, plan itineraries, and even suggest accommodations. This repository houses the codebase for the Mravel application, which is built using JavaScript and integrates with MindsDB that powers all the underlying Machine Learning models.
+**MindsDB + Travel => MRAVEL**
+
+Mravel is an AI-powered Travel Assistant that helps you explore destinations, find the best cuisines, discover attractions, plan itineraries, and even suggest accommodations. This repository houses the codebase for the Mravel application, which is built using JavaScript and integrates with MindsDB which powers all the underlying Machine Learning models.
 
 ![Mravel Cover](https://github.com/Rutam21/Mravel/assets/47860497/9fee87de-de7f-4c39-8ed1-1497a8c2b689)
 
@@ -43,6 +45,18 @@ git clone https://github.com/your-username/mravel.git
 ```bash
 cd mravel
 npm install
+```
+
+**Set up Environment Variables:** Create a .env file in the Mravel base directory. Add the following variables:
+
+```bash
+MINDSDB_USERNAME="YOUR_MINDSDB_USERNAME"
+MINDSDB_PASSWORD="YOUR_MINDSDB_PASSWORD"
+OPENAI_DESTINATION_MODEL="MODEL NAME FOR THE DESTINATION PICKER"
+OPENAI_ITINERARY_MODEL="MODEL NAME FOR THE ITINERARY PICKER"
+OPENAI_ACCOMODATION_MODEL="MODEL NAME FOR THE ACCOMMODATION PICKER"
+OPENAI_CUISINE_MODEL="MODEL NAME FOR THE CUISINE PICKER"
+OPENAI_ATTRACTIONS_MODEL="MODEL NAME FOR THE ATTRACTIONS PICKER"
 ```
 
 **Run the Application:** Start the Mravel application by running the development server:
