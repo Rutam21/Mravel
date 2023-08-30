@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mravel</title>
+    <meta property="og:title" content="Mravel" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {
+        line-height: 1.15;
+      }
+      body {
+        margin: 0;
+      }
+      * {
+        box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+      }
+      p,
+      li,
+      ul,
+      pre,
+      div,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      figure,
+      blockquote,
+      figcaption {
+        margin: 0;
+        padding: 0;
+      }
+      button {
+        background-color: transparent;
+      }
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font-family: inherit;
+        font-size: 100%;
+        line-height: 1.15;
+        margin: 0;
+      }
+      button,
+      select {
+        text-transform: none;
+      }
+      button,
+      [type="button"],
+      [type="reset"],
+      [type="submit"] {
+        -webkit-appearance: button;
+      }
+      button::-moz-focus-inner,
+      [type="button"]::-moz-focus-inner,
+      [type="reset"]::-moz-focus-inner,
+      [type="submit"]::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+      }
+      button:-moz-focus,
+      [type="button"]:-moz-focus,
+      [type="reset"]:-moz-focus,
+      [type="submit"]:-moz-focus {
+        outline: 1px dotted ButtonText;
+      }
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+      input {
+        padding: 2px 4px;
+      }
+      img {
+        display: block;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Titillium Web;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style: normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-scheme-green100);
+        background-color: var(--dl-color-scheme-yellow20);
+      }
+    </style>
+    <link
+      rel="shortcut icon"
+      href="./assets/mravelicon.png"
+      type="icon/png"
+      sizes="32x32"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <script type="text/javascript"> ... </script> -->
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div id="loading-screen">
+      <div id="loop" class="center"></div>
+      <div id="bike-wrapper" class="center">
+        <div id="bike" class="centerBike"></div>
+      </div>
+    </div>
+    <div>
+      <link href="./styles/index.css" rel="stylesheet" />
+
+      <div class="home-container">
+        <div class="navbar-container">
+          <div class="max-width">
+            <div class="home-container01">
+              <a href="#main" class="home-link">
+                <span class="home-text">
+                  <span class="home-text01">M</span><span>Ravel</span>
+                </span>
+              </a>
+              <span class="home-text03">AI Travel Assistant</span>
+            </div>
+            <div class="home-links">
+              <a href="#destination" class="home-text04 navbarLink">
+                Destinations
+              </a>
+              <a href="#itinerary" class="home-link navbarLink">Itinerary</a>
+              <a href="#hotel" class="home-link1 navbarLink">Accomodation</a>
+              <a href="#explore" class="home-link2 navbarLink">Explore</a>
+            </div>
+            <a
+              href="https://github.com/Rutam21/Mravel"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <svg viewBox="0 0 950.8571428571428 1024" class="home-icon">
+                <path
+                  d="M365.714 694.857c0 41.714-21.714 109.714-73.143 109.714s-73.143-68-73.143-109.714 21.714-109.714 73.143-109.714 73.143 68 73.143 109.714zM731.429 694.857c0 41.714-21.714 109.714-73.143 109.714s-73.143-68-73.143-109.714 21.714-109.714 73.143-109.714 73.143 68 73.143 109.714zM822.857 694.857c0-87.429-53.143-164.571-146.286-164.571-37.714 0-73.714 6.857-111.429 12-29.714 4.571-59.429 6.286-89.714 6.286s-60-1.714-89.714-6.286c-37.143-5.143-73.714-12-111.429-12-93.143 0-146.286 77.143-146.286 164.571 0 174.857 160 201.714 299.429 201.714h96c139.429 0 299.429-26.857 299.429-201.714zM950.857 594.286c0 63.429-6.286 130.857-34.857 189.143-75.429 152.571-282.857 167.429-431.429 167.429-150.857 0-370.857-13.143-449.143-167.429-29.143-57.714-35.429-125.714-35.429-189.143 0-83.429 22.857-162.286 77.714-226.286-10.286-31.429-15.429-64.571-15.429-97.143 0-42.857 9.714-85.714 29.143-124.571 90.286 0 148 39.429 216.571 93.143 57.714-13.714 117.143-20 176.571-20 53.714 0 108 5.714 160 18.286 68-53.143 125.714-91.429 214.857-91.429 19.429 38.857 29.143 81.714 29.143 124.571 0 32.571-5.143 65.143-15.429 96 54.857 64.571 77.714 144 77.714 227.429z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div id="main" class="hero-container section-container">
+          <div class="home-max-width1 max-width">
+            <div class="home-content">
+              <span class="home-subtitle beforeHeading">
+                AI Travel Assistant
+              </span>
+              <h1 class="home-title">
+                Unlock the best vacation tailored for you with AI!
+              </h1>
+              <span class="home-description">
+                Mravel is an intelligent travel assistant powered by MindsDB
+                that helps you choose destinations, plan itineraries, find
+                hotels and explore local tourist spots and cuisines with a
+                simple click.
+              </span>
+              <a href="#destination" class="home-link4 button button-gradient">
+                Travel Mode ON
+              </a>
+            </div>
+            <div class="home-image">
+              <img
+                alt="image"
+                src="https://images.unsplash.com/photo-1532347922424-c652d9b7208e?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDZ8fHRyYXZlbCUyMG1vZGV8ZW58MHx8fHwxNjkyOTgyMzkzfDA&amp;ixlib=rb-4.0.3&amp;w=600"
+                class="home-hero-image"
+              />
+              <img
+                alt="image"
+                src="./assets/union-400w.png"
+                class="home-graphic-top"
+              />
+              <img
+                alt="image"
+                src="./assets/group 18-1200w.png"
+                class="home-image1"
+              />
+            </div>
+          </div>
+        </div>
+        <div id="destination" class="section-container home-section">
+          <div class="home-max-width2 max-width">
+            <div class="home-image2">
+              <img
+                alt="image"
+                src="https://images.unsplash.com/photo-1570698473651-b2de99bae12f?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDE0fHxkZXN0aW5hdGlvbnxlbnwwfHx8fDE2OTI5ODI3OTd8MA&amp;ixlib=rb-4.0.3&amp;w=1200"
+                class="home-hero-image1"
+              />
+            </div>
+            <div class="home-content1">
+              <span class="home-text05 beforeHeading">Destinations</span>
+              <h1 class="home-text06">Your Next Travel Destination Awaits!</h1>
+              <span class="home-text07">
+                Key in your typical spot interests, preferred season and
+                allocated budget and let AI help you with some of the amazing
+                destinations that best suit your choice.
+              </span>
+              <div class="home-container02">
+                <form
+                  class="home-form"
+                  onsubmit="return checkFormInputs(this) && handleDestination(event)"
+                >
+                  <div class="home-container03">
+                    <label class="home-text08">Country</label>
+                    <input
+                      type="text"
+                      id="destCountryInput"
+                      required="true"
+                      placeholder="Enter Country"
+                      class="home-textinput input"
+                    />
+                  </div>
+                  <div class="home-container04">
+                    <label class="home-text09">Interests</label>
+                    <select
+                      color="red"
+                      background="red"
+                      class="home-select"
+                      id="destInterestInput"
+                      required="true"
+                    >
+                      <option value="Beach and Relaxation">
+                        Beach and Relaxation
+                      </option>
+                      <option value="Adventure and Outdoor Activities">
+                        Adventure and Outdoor Activities
+                      </option>
+                      <option value="Food and Gastronomy">
+                        Food and Gastronomy
+                      </option>
+                      <option value="Cultural and Historical Sites">
+                        Cultural and Historical Sites
+                      </option>
+                      <option value="Shopping and Fashion">
+                        Shopping and Fashion
+                      </option>
+                      <option value="Wildlife and Nature">
+                        Wildlife and Nature
+                      </option>
+                      <option value="City Exploration">City Exploration</option>
+                      <option value="Arts and Entertainment">
+                        Arts and Entertainment
+                      </option>
+                      <option value="Sports and Recreation">
+                        Sports and Recreation
+                      </option>
+                      <option value="Wellness and Spa">Wellness and Spa</option>
+                    </select>
+                  </div>
+                  <div class="home-container05">
+                    <label class="home-text10">Season</label>
+                    <select
+                      class="home-select1"
+                      id="destSeasonInput"
+                      required="true"
+                    >
+                      <option value="Spring (March-May)" selected="">
+                        Spring (March-May)
+                      </option>
+                      <option value="Summer (June-August)">
+                        Summer (June-August)
+                      </option>
+                      <option value="Autumn (September-November)">
+                        Autumn (September-November)
+                      </option>
+                      <option value="Winter (December-February)">
+                        Winter (December-February)
+                      </option>
+                    </select>
+                  </div>
+                  <div class="home-container06">
+                    <label class="home-text11">Budget</label>
+                    <select
+                      class="home-select2"
+                      id="destBudgetInput"
+                      required="true"
+                    >
+                      <option value="Budget-Friendly (Under $1000)" selected="">
+                        Budget-Friendly
+                      </option>
+                      <option value="Moderate ($1000-$2000)">Moderate</option>
+                      <option value="Luxury ($2000-$3000)">Luxury</option>
+                      <option value="Unlimited ($3000+)">
+                        No Budget Limit
+                      </option>
+                    </select>
+                  </div>
+                  <button
+                    class="home-button button-primary button bg-transparent"
+                    type="submit"
+                  >
+                    Find Destinations
+                  </button>
+                </form>
+
+                <div class="home-container07" id="destOutputDiv">
+                  <h1 class="home-text12">
+                    The perfectly curated list of destinations for you is
+                    available to download now.
+                  </h1>
+                  <div class="home-container08">
+                    <button
+                      type="button"
+                      id="destDownload"
+                      class="home-button01 button button-primary bg-transparent"
+                    >
+                      Download
+                    </button>
+                    <button
+                      type="button"
+                      id="destClose"
+                      class="home-button02 button button-primary bg-transparent"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="itinerary" class="home-section1 section-container">
+          <div class="home-max-width3 max-width">
+            <div class="home-content2">
+              <span class="home-text13 beforeHeading">Itinerary</span>
+              <h1 class="home-text14">Make a Perfect Itinerary</h1>
+              <span class="home-text15">
+                Enter your Destination and Travel Duration and let AI curate the
+                perfect itinerary for you.
+              </span>
+              <form
+                class="home-form1"
+                onsubmit="return checkFormInputs(this) && handleItinerary(event)"
+              >
+                <div class="home-container09">
+                  <span class="home-title1">Destination</span>
+                  <input
+                    id="itineraryDestInput"
+                    type="text"
+                    placeholder="Enter Destination"
+                    class="home-textinput1 input"
+                  />
+                </div>
+                <div class="home-container10">
+                  <span class="home-title2">Duration</span>
+                  <select class="home-select3" id="itineraryDurationInput">
+                    <option value="1 Week" selected="">1 Week</option>
+                    <option value="2 Week">2 Weeks</option>
+                    <option value="3 Weeks">3 Weeks</option>
+                    <option value="4 Weeks">4 Weeks</option>
+                  </select>
+                </div>
+                <button
+                  type="submit"
+                  class="home-button03 button button-primary bg-transparent"
+                >
+                  Create Itinerary
+                </button>
+              </form>
+              <div class="home-container11" id="itineraryOutputDiv">
+                <h1 class="home-text16">
+                  The perfect itinerary tailored for you is available to
+                  download now.
+                </h1>
+                <div class="home-container12">
+                  <button
+                    id="itineraryDownload"
+                    type="button"
+                    class="home-button04 button button-primary bg-transparent"
+                  >
+                    Download
+                  </button>
+                  <button
+                    id="itineraryClose"
+                    type="button"
+                    class="home-button05 button button-primary bg-transparent"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="home-image3">
+              <img
+                alt="image"
+                src="https://images.unsplash.com/photo-1587573088697-b4fa10460683?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDF8fEl0aW5lcmFyeXxlbnwwfHx8fDE2OTI5ODI2Mjd8MA&amp;ixlib=rb-4.0.3&amp;w=1200"
+                class="home-hero-image2"
+              />
+            </div>
+          </div>
+        </div>
+        <div id="hotel" class="home-section2 section-container">
+          <div class="home-max-width4 max-width">
+            <div class="home-image4">
+              <img
+                alt="image"
+                src="https://images.unsplash.com/photo-1586527936446-43049e8e95be?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDE1fHxob3RlbCUyMGJvb2tpbmd8ZW58MHx8fHwxNjkzMDQ5MjQ0fDA&amp;ixlib=rb-4.0.3&amp;w=1200"
+                class="home-hero-image3"
+              />
+            </div>
+            <div class="home-content3">
+              <span class="home-text17 beforeHeading">Accomodation</span>
+              <h1 class="home-text18">Find your Hotel!</h1>
+              <form
+                onsubmit="return checkFormInputs(this) && handleAccomodation(event)"
+              >
+                <div class="home-step">
+                  <div class="home-container13">
+                    <span class="home-title3">Destination</span>
+                    <input
+                      id="accomodationInputDestination"
+                      type="text"
+                      placeholder="Enter Destination"
+                      class="home-textinput2 input"
+                    />
+                  </div>
+                </div>
+                <div class="home-step1">
+                  <div class="home-container14">
+                    <span class="home-title4">Type</span>
+                    <select class="home-select4" id="accomodationInputType">
+                      <option value="1-Star">1-Star</option>
+                      <option value="2-Star">2-Star</option>
+                      <option value="4-Star">3-Star</option>
+                      <option value="3-Star">4-Star</option>
+                      <option value="5-Star">5-Star</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="home-step2">
+                  <div class="home-container15">
+                    <button
+                      type="submit"
+                      class="home-button06 button button-gradient"
+                    >
+                      Find Hotels
+                    </button>
+                  </div>
+                </div>
+              </form>
+              <div class="home-step3" id="accomodationOutputDiv">
+                <div class="home-container16">
+                  <h1 class="home-text19">
+                    The list of the best suited hotels for you is available to
+                    download now.
+                  </h1>
+                  <div class="home-container17">
+                    <button
+                      id="accomodationDownload"
+                      type="button"
+                      class="home-button07 button button-primary bg-transparent"
+                    >
+                      Download
+                    </button>
+                    <button
+                      id="accomodationClose"
+                      type="button"
+                      class="home-button08 button button-primary bg-transparent"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="explore" class="home-section3 section-container">
+          <div class="home-max-width5 max-width">
+            <span class="home-text20 beforeHeading">Explore</span>
+            <h1 class="home-text21">
+              Find the best of Local Cuisines and Tourist Attractions
+            </h1>
+            <form
+              id="exploreForm"
+              onsubmit="return checkFormInputs(this) && handleExplore(event)"
+            >
+              <div class="home-container18">
+                <span class="home-title5">Destination</span>
+                <input
+                  id="exploreInputDestination"
+                  type="text"
+                  placeholder="Enter Destination"
+                  class="home-textinput3 input"
+                />
+              </div>
+              <div class="home-container19">
+                <div class="home-container20">
+                  <input
+                    type="radio"
+                    name="exploreRadio"
+                    required=""
+                    value="cuisines"
+                    class="home-radiobutton"
+                  />
+                  <label class="home-text22">Cuisines</label>
+                </div>
+                <div class="home-container21">
+                  <input
+                    type="radio"
+                    name="exploreRadio"
+                    required=""
+                    value="attractions"
+                    class="home-radiobutton1"
+                  />
+                  <label class="home-text23">Attractions</label>
+                </div>
+              </div>
+              <button
+                type="submit"
+                class="home-button09 button button-primary bg-transparent"
+              >
+                Find
+              </button>
+            </form>
+            <div class="home-container22" id="exploreOutputDiv">
+              <h1 class="home-text24">
+                The list of the best local cuisines or attractions is available
+                to download now.
+              </h1>
+              <div class="home-container23">
+                <button
+                  type="button"
+                  id="exploreDownload"
+                  class="home-button10 button button-primary bg-transparent"
+                >
+                  Download
+                </button>
+                <button
+                  type="button"
+                  id="exploreClose"
+                  class="home-button11 button button-primary bg-transparent"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="home-section4 section-container">
+          <div class="home-max-width6 max-width">
+            <div class="home-banner">
+              <span class="home-text25 beforeHeading">MRAVEL</span>
+              <h1 class="home-text26">
+                This amazing app is powered by MindsDB.
+              </h1>
+              <span class="home-text27">
+                Try it yourself now and sign up on MindsDB Cloud.
+              </span>
+              <div class="home-btns">
+                <a
+                  href="https://cloud.mindsdb.com/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="home-link5 button button-gradient"
+                >
+                  Sign up on MindsDB
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="home-footer">
+          <h1 class="home-heading">
+            <span>© 2023 MRAVEL. Designed by</span>
+            <a
+              href="https://github.com/Rutam21"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="home-link5"
+            >
+              Rutam
+            </a>
+            <span>. All rights reserved.</span>
+          </h1>
+        </footer>
+      </div>
+    </div>
+    <script>
+      window.onload = () => {
+        const runAllScripts = () => {
+          initializeAllAccordions();
+        };
+
+        const listenForUrlChanges = () => {
+          let url = location.href;
+          document.body.addEventListener(
+            "click",
+            () => {
+              requestAnimationFrame(() => {
+                if (url !== location.href) {
+                  runAllScripts();
+                  url = location.href;
+                }
+              });
+            },
+            true
+          );
+        };
+
+        const initializeAllAccordions = () => {
+          const allAccordions = document.querySelectorAll(
+            '[data-role="Accordion"]'
+          );
+
+          allAccordions.forEach((accordion) => {
+            const accordionHeader = accordion.querySelector(
+              '[data-type="accordion-header"]'
+            );
+            const accordionContent = accordion.querySelector(
+              '[data-type="accordion-content"]'
+            );
+
+            accordionHeader.addEventListener("click", () => {
+              if (accordionContent.style.maxHeight) {
+                accordionContent.style.maxHeight = "";
+              } else {
+                accordionContent.style.maxHeight = `${accordionContent.scrollHeight}px`;
+              }
+            });
+          });
+        };
+
+        listenForUrlChanges();
+        runAllScripts();
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/downloadjs@1.4.7/download.min.js"></script>
+    <script type="text/javascript" src="./scripts/destination.js"></script>
+    <script type="text/javascript" src="./scripts/itinerary.js"></script>
+    <script type="text/javascript" src="./scripts/accomodation.js"></script>
+    <script type="text/javascript" src="./scripts/explore.js"></script>
+    <script type="text/javascript" src="./scripts/generatePdf.js"></script>
+    <script type="text/javascript" src="./scripts/validation.js"></script>
+  </body>
+</html>
