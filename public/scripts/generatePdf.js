@@ -1,4 +1,3 @@
-//const page = pdfDoc.addPage(PDFLib.PageSizes.A4);
 async function generatePdf(content) {
     const pdfDoc = await PDFLib.PDFDocument.create();
     const pageWidth = 600; // Set a custom page width (adjust as needed)

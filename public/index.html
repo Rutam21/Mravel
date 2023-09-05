@@ -129,7 +129,8 @@
       <div id="bike-wrapper" class="center">
         <div id="bike" class="centerBike"></div>
       </div>
-    </div>
+      <div id="loading-text" class="centerText">Great things take time...</div>
+    </div>    
     <div>
       <link href="./styles/index.css" rel="stylesheet" />
 
@@ -208,7 +209,7 @@
             <div class="home-image2">
               <img
                 alt="image"
-                src="https://images.unsplash.com/photo-1570698473651-b2de99bae12f?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDE0fHxkZXN0aW5hdGlvbnxlbnwwfHx8fDE2OTI5ODI3OTd8MA&amp;ixlib=rb-4.0.3&amp;w=1200"
+                src="./assets/travel.png"
                 class="home-hero-image1"
               />
             </div>
@@ -311,7 +312,7 @@
                     </select>
                   </div>
                   <button
-                    class="home-button button-primary button bg-transparent"
+                    class="home-button button-secondary button bg-transparent"
                     type="submit"
                   >
                     Find Destinations
@@ -327,14 +328,14 @@
                     <button
                       type="button"
                       id="destDownload"
-                      class="home-button01 button button-primary bg-transparent"
+                      class="home-button01 button button-secondary bg-transparent"
                     >
                       Download
                     </button>
                     <button
                       type="button"
                       id="destClose"
-                      class="home-button02 button button-primary bg-transparent"
+                      class="home-button02 button button-secondary bg-transparent"
                     >
                       Close
                     </button>
@@ -377,7 +378,7 @@
                 </div>
                 <button
                   type="submit"
-                  class="home-button03 button button-primary bg-transparent"
+                  class="home-button03 button button-secondary bg-transparent"
                 >
                   Create Itinerary
                 </button>
@@ -391,14 +392,14 @@
                   <button
                     id="itineraryDownload"
                     type="button"
-                    class="home-button04 button button-primary bg-transparent"
+                    class="home-button04 button button-secondary bg-transparent"
                   >
                     Download
                   </button>
                   <button
                     id="itineraryClose"
                     type="button"
-                    class="home-button05 button button-primary bg-transparent"
+                    class="home-button05 button button-secondary bg-transparent"
                   >
                     Close
                   </button>
@@ -408,7 +409,7 @@
             <div class="home-image3">
               <img
                 alt="image"
-                src="https://images.unsplash.com/photo-1587573088697-b4fa10460683?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDF8fEl0aW5lcmFyeXxlbnwwfHx8fDE2OTI5ODI2Mjd8MA&amp;ixlib=rb-4.0.3&amp;w=1200"
+                src="./assets/7770570.png"
                 class="home-hero-image2"
               />
             </div>
@@ -419,7 +420,7 @@
             <div class="home-image4">
               <img
                 alt="image"
-                src="https://images.unsplash.com/photo-1586527936446-43049e8e95be?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDE1fHxob3RlbCUyMGJvb2tpbmd8ZW58MHx8fHwxNjkzMDQ5MjQ0fDA&amp;ixlib=rb-4.0.3&amp;w=1200"
+                src="./assets/52876.png"
                 class="home-hero-image3"
               />
             </div>
@@ -456,7 +457,7 @@
                   <div class="home-container15">
                     <button
                       type="submit"
-                      class="home-button06 button button-gradient"
+                      class="home-button06 button button-secondary"
                     >
                       Find Hotels
                     </button>
@@ -473,14 +474,14 @@
                     <button
                       id="accomodationDownload"
                       type="button"
-                      class="home-button07 button button-primary bg-transparent"
+                      class="home-button07 button button-secondary"
                     >
                       Download
                     </button>
                     <button
                       id="accomodationClose"
                       type="button"
-                      class="home-button08 button button-primary bg-transparent"
+                      class="home-button08 button button-secondary"
                     >
                       Close
                     </button>
@@ -533,7 +534,7 @@
               </div>
               <button
                 type="submit"
-                class="home-button09 button button-primary bg-transparent"
+                class="home-button09 button button-secondary bg-transparent"
               >
                 Find
               </button>
@@ -547,14 +548,14 @@
                 <button
                   type="button"
                   id="exploreDownload"
-                  class="home-button10 button button-primary bg-transparent"
+                  class="home-button10 button button-secondary bg-transparent"
                 >
                   Download
                 </button>
                 <button
                   type="button"
                   id="exploreClose"
-                  class="home-button11 button button-primary bg-transparent"
+                  class="home-button11 button button-secondary bg-transparent"
                 >
                   Close
                 </button>
@@ -574,6 +575,7 @@
               </span>
               <div class="home-btns">
                 <a
+                  id="signup"
                   href="https://cloud.mindsdb.com/"
                   target="_blank"
                   rel="noreferrer noopener"
@@ -602,53 +604,15 @@
       </div>
     </div>
     <script>
-      window.onload = () => {
-        const runAllScripts = () => {
-          initializeAllAccordions();
-        };
+      const loadingText = document.getElementById("loading-text");
+      const textArray = ["Please Wait...", "We are still processing your request", "Almost there..."];
+      let currentIndex = 0;
 
-        const listenForUrlChanges = () => {
-          let url = location.href;
-          document.body.addEventListener(
-            "click",
-            () => {
-              requestAnimationFrame(() => {
-                if (url !== location.href) {
-                  runAllScripts();
-                  url = location.href;
-                }
-              });
-            },
-            true
-          );
-        };
-
-        const initializeAllAccordions = () => {
-          const allAccordions = document.querySelectorAll(
-            '[data-role="Accordion"]'
-          );
-
-          allAccordions.forEach((accordion) => {
-            const accordionHeader = accordion.querySelector(
-              '[data-type="accordion-header"]'
-            );
-            const accordionContent = accordion.querySelector(
-              '[data-type="accordion-content"]'
-            );
-
-            accordionHeader.addEventListener("click", () => {
-              if (accordionContent.style.maxHeight) {
-                accordionContent.style.maxHeight = "";
-              } else {
-                accordionContent.style.maxHeight = `${accordionContent.scrollHeight}px`;
-              }
-            });
-          });
-        };
-
-        listenForUrlChanges();
-        runAllScripts();
-      };
+      function changeText() {
+        currentIndex = (currentIndex + 1) % textArray.length;
+        loadingText.textContent = textArray[currentIndex];
+      }
+      loadingText.addEventListener("animationiteration", changeText);
     </script>
     <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/downloadjs@1.4.7/download.min.js"></script>

@@ -77,13 +77,14 @@
   transition: 0.3s;
   font-family: Lexend;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.25;
   border-color: var(--dl-color-scheme-green80);
   margin-right: var(--dl-space-space-unit);
 }
 .button-secondary:hover {
   color: var(--dl-color-scheme-white);
-  background-color: var(--dl-color-scheme-orange100);
+  background-color: #0C4237;
+  border: solid 3px black;
 }
 .button-primary {
   color: var(--dl-color-scheme-white);

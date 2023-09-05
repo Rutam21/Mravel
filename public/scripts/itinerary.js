@@ -58,7 +58,6 @@ function handleItinerary(event) {
             } else {
                 document.getElementById("loading-screen").style.display = "none";
                 alert("We are caught in the middle of an error. Please try Again!");
-                resultDiv.style.display = "flex"; // Show the resultDiv
             }
         });
     } catch (error) {

@@ -1,9 +1,43 @@
 const MindsDB = require("mindsdb-js-sdk").default;
-const destinationModelName = process.env.OPENAI_DESTINATION_MODEL;
-const itineraryModelName = process.env.OPENAI_ITINERARY_MODEL;
-const accomodationModelName = process.env.OPENAI_ACCOMODATION_MODEL;
 const logger = require("../logger");
+const lb = require("./loadbalancer");
 
+const Destinations = [
+  process.env.OPENAI_DESTINATION_MODEL1,
+  process.env.OPENAI_DESTINATION_MODEL2,
+  process.env.OPENAI_DESTINATION_MODEL3,
+  process.env.OPENAI_DESTINATION_MODEL4,
+];
+
+const Itinerary = [
+  process.env.OPENAI_ITINERARY_MODEL1,
+  process.env.OPENAI_ITINERARY_MODEL2,
+  process.env.OPENAI_ITINERARY_MODEL3,
+  process.env.OPENAI_ITINERARY_MODEL4,
+];
+const Accommodation = [
+  process.env.OPENAI_ACCOMODATION_MODEL1,
+  process.env.OPENAI_ACCOMODATION_MODEL2,
+  process.env.OPENAI_ACCOMODATION_MODEL3,
+  process.env.OPENAI_ACCOMODATION_MODEL4,
+];
+
+const Cuisines = [
+  process.env.OPENAI_CUISINE_MODEL1,
+  process.env.OPENAI_CUISINE_MODEL2,
+  process.env.OPENAI_CUISINE_MODEL3,
+  process.env.OPENAI_CUISINE_MODEL4,
+];
+const Spots = [
+  process.env.OPENAI_ATTRACTIONS_MODEL1,
+  process.env.OPENAI_ATTRACTIONS_MODEL2,
+  process.env.OPENAI_ATTRACTIONS_MODEL3,
+  process.env.OPENAI_ATTRACTIONS_MODEL4,
+];
+
+let destinationModelName;
+let itineraryModelName;
+let accomodationModelName;
 let exploreModelName;
 let output;
 
@@ -23,7 +57,7 @@ async function connectToMindsDB() {
 
 async function curateDestination(inputCountry, inputInterest, inputSeason, inputBudget) {
   let retries = 3; // Maximum number of retries
-
+  destinationModelName= await lb.getRandomOption(Destinations);
   while (retries > 0) {
     try {
       const escapedCountry = inputCountry.replace(/"/g, "");
@@ -46,7 +80,7 @@ async function curateDestination(inputCountry, inputInterest, inputSeason, input
 
 async function generateItinerary(inputDestination,inputDuration) {
   let retries = 3; // Maximum number of retries
-
+  itineraryModelName= await lb.getRandomOption(Itinerary);
   while (retries > 0) {
     try {
       const escapedDestination = inputDestination.replace(/"/g, "");
@@ -69,7 +103,7 @@ async function generateItinerary(inputDestination,inputDuration) {
 
 async function selectAccomodation(inputDestination,inputType) {
   let retries = 3; // Maximum number of retries
-
+  accomodationModelName= await lb.getRandomOption(Accommodation);
   while (retries > 0) {
     try {
       const escapedDestination = inputDestination.replace(/"/g, "");
@@ -94,10 +128,10 @@ async function exploreOptions(inputDestination,choice) {
   let retries = 3; // Maximum number of retries
 
   if (choice === "cuisines") {
-    exploreModelName = process.env.OPENAI_CUISINE_MODEL;
+    exploreModelName = await lb.getRandomOption(Cuisines);
     output="cuisine";
   } else if (choice === "attractions") {
-    exploreModelName = process.env.OPENAI_ATTRACTIONS_MODEL;
+    exploreModelName = await lb.getRandomOption(Spots);
     output="spot";
   }
 

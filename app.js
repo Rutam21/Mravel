@@ -1,6 +1,5 @@
 require("dotenv").config();
 const express = require("express");
-const { PDFDocument, StandardFonts, rgb } = require("pdf-lib");
 const bodyParser = require("body-parser");
 const mindsdb = require("./api/mindsdb");
 const logger = require("./logger");
