@@ -1,4 +1,3 @@
-// Store a reference to the downloadPdf function for destinations
 let downloadPdfFunctionDest = null;
 
 function handleDestination(event) {
@@ -50,7 +49,7 @@ function handleDestination(event) {
                         const pdfBytes = await generatePdf(data.rows[0].destination);
                         download(pdfBytes, "MravelDestination.pdf", "application/pdf");
                     } catch (error) {
-                        alert("An error occurred while generating the PDF:", error)
+                        alert("An error occurred while generating the PDF:", error);
                         console.error("An error occurred while generating the PDF:", error);
                     }
                 };
@@ -60,11 +59,10 @@ function handleDestination(event) {
             } else {
                 document.getElementById("loading-screen").style.display = "none";
                 alert("We are caught in the middle of an error. Please try Again!");
-                resultDiv.style.display = "flex"; // Show the resultDiv
             }
         });
     } catch (error) {
         document.getElementById("loading-screen").style.display = "none";
-        alert("An error occurred while translating the text");
+        alert("There's an error at the moment. Please Try Again!");
     }
 }
